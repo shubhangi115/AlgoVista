@@ -1,14 +1,13 @@
 # AlgoVista - Data Structure Encyclopedia
 
-**AlgoVista** is a fun, interactive platform to **learn**, **visualize** data structures through engaging animations, clear explanations, and quizzes.
+**AlgoVista** is a fun, interactive platform to **learn**, **visualize** data structures through visual animations, clear explanations, and quizz.
 
 ---
 
 ## Key Features
 
 -  **Visual Simulations**: Linked List, Stack, Queue, Tree, Graph, Heap, Hash Table, Trie  
--  **Theory + Use Cases**: Clean, concise notes with real-world analogies  
--  **Quizzes**: Test your knowledge after each topic  
+-  **Quizz**: Test your knowledge after each topic  
 -  **Time Complexity Tables**: Quick glance at performance of all operations  
 -  **Modern UI**: Built with HTML, CSS & Bootstrap — fully responsive and visually rich  
 
@@ -24,13 +23,13 @@
 ---
 
 ## Structures Covered
-## Linear: Linked List, Stack, Queue
+1. Linear: Linked List, Stack, Queue
 
-## Tree-Based: Binary Tree, Heap
+2. Tree-Based: Binary Tree, Heap
 
-## Graph-Based: Graph (DFS, BFS)
+3. Graph-Based: Graph (DFS, BFS)
 
-## Hash-Based: Hash Table, Trie
+4. Hash-Based: Hash Table, Trie
 
 ---
 
