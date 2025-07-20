@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlgoVista - Data Structure Encyclopedia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#homepage">
+                <i class="fas fa-code me-2"></i>AlgoVista
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#homepage">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Categories
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#basic">Basic Structures</a></li>
+                            <li><a class="dropdown-item" href="#linear">Linear Structures</a></li>
+                            <li><a class="dropdown-item" href="#tree">Tree-based</a></li>
+                            <li><a class="dropdown-item" href="#graph">Graphs</a></li>
+                            <li><a class="dropdown-item" href="#hash">Hash Tables</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#quiz">Quiz</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Homepage Section -->
+    <section id="homepage">
+        <!-- Hero Section -->
+        <div class="hero-section text-center py-5">
+            <div class="container">
+                <h1 class="display-4 mb-4 hero-title">Welcome to AlgoVista</h1>
+                <p class="lead mb-4 hero-subtitle">Interactive Data Structure Encyclopedia with Visualizations</p>
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="heroSearch" placeholder="Search for a data structure...">
+                            <button class="btn search-btn" type="button" onclick="searchDataStructure()">
+                                <i class="fas fa-search"></i> Search
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <p class="fs-5">Discover the power of interactive learning with our comprehensive data structure visualizations!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- About AlgoVista Section -->
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center bg-algovista p-5 rounded-4 shadow-sm">
+                    <h2 class="section-title">What is AlgoVista?</h2>
+                    <p class="lead algovista-desc">Dive into the world of data structures with AlgoVista — a fun, visual encyclopedia where learning meets excitement!</p>
+                    <p class="fs-5 mt-3 algovista-desc">Watch concepts come to life with colorful animations, explore topics at your own pace, and test your skills with quick quizzes.<br>Because learning DSA doesn’t have to be boring — it can be visually fun and interactive!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Data Structures Section -->
+        <div class="container py-5">
+            <h2 class="section-title text-center mb-5">Featured Data Structures</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-list fa-3x explore-icon mb-3"></i>
+                            <h5 class="card-title">Array</h5>
+                            <p class="card-text">A collection of elements stored at contiguous memory locations, accessible by index.</p>
+                            <button class="btn explore-btn" onclick="scrollToSection('basic')">Explore</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-link fa-3x explore-icon mb-3"></i>
+                            <h5 class="card-title">Linked List</h5>
+                            <p class="card-text">A linear data structure where elements are stored in nodes, and each node points to the next.</p>
+                            <button class="btn explore-btn" onclick="scrollToSection('linear')">Explore</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-layer-group fa-3x explore-icon mb-3"></i>
+                            <h5 class="card-title">Stack</h5>
+                            <p class="card-text">A LIFO (Last In, First Out) data structure where elements are added and removed from the top.</p>
+                            <button class="btn explore-btn" onclick="scrollToSection('linear')">Explore</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-queue fa-3x explore-icon mb-3"></i>
+                            <h5 class="card-title">Queue</h5>
+                            <p class="card-text">A FIFO (First In, First Out) data structure where elements are added at the rear and removed from the front.</p>
+                            <button class="btn explore-btn" onclick="scrollToSection('linear')">Explore</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-tree fa-3x explore-icon mb-3"></i>
+                            <h5 class="card-title">Tree</h5>
+                            <p class="card-text">A hierarchical data structure where each node has at most two children, referred to as left and right child.</p>
+                            <button class="btn explore-btn" onclick="scrollToSection('tree')">Explore</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-project-diagram fa-3x explore-icon mb-3"></i>
+                            <h5 class="card-title">Graph</h5>
+                            <p class="card-text">A non-linear data structure consisting of vertices (nodes) and edges that connect these vertices.</p>
+                            <button class="btn explore-btn" onclick="scrollToSection('graph')">Explore</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-hashtag fa-3x explore-icon mb-3"></i>
+                            <h5 class="card-title">Hash Table</h5>
+                            <p class="card-text">A data structure that implements an associative array, mapping keys to values using a hash function.</p>
+                            <button class="btn explore-btn" onclick="scrollToSection('hash')">Explore</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-mountain fa-3x explore-icon mb-3"></i>
+                            <h5 class="card-title">Heap</h5>
+                            <p class="card-text">A specialized tree-based data structure that satisfies the heap property (max-heap or min-heap).</p>
+                            <button class="btn explore-btn" onclick="scrollToSection('tree')">Explore</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- How It Works Section -->
+        <div class="container py-5 how-it-works-section">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="section-title text-center mb-5">How It Works</h2>
+                    <div class="row">
+                        <div class="col-md-4 text-center mb-4">
+                            <div class="step-card">
+                                <div class="step-number">1</div>
+                                <i class="fas fa-mouse-pointer fa-2x howitworks-icon mb-3"></i>
+                                <h5>Choose a Data Structure</h5>
+                                <p>Select from our comprehensive collection of data structures</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-center mb-4">
+                            <div class="step-card">
+                                <div class="step-number">2</div>
+                                <i class="fas fa-eye fa-2x howitworks-icon mb-3"></i>
+                                <h5>Explore & Visualize</h5>
+                                <p>Watch interactive animations and understand the concepts</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-center mb-4">
+                            <div class="step-card">
+                                <div class="step-number">3</div>
+                                <i class="fas fa-question-circle fa-2x howitworks-icon mb-3"></i>
+                                <h5>Test Your Knowledge</h5>
+                                <p>Take quizzes to reinforce your understanding</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container mt-5">
+        <!-- Basic Data Structures Section -->
+        <section id="basic" class="mb-5">
+            <h2 class="section-title">Basic Data Structures</h2>
+            <div class="row">
+                <!-- Array -->
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header">
+                            <h5><i class="fas fa-list me-2"></i>Array</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">A collection of elements stored at contiguous memory locations, accessible by index.</p>
+                            <div class="canvas-container">
+                                <canvas id="arrayCanvas" width="400" height="200"></canvas>
+                            </div>
+                            <div class="controls mt-3">
+                                <button class="btn btn-sm btn-primary" onclick="arrayVisualizer.insert()">Insert</button>
+                                <button class="btn btn-sm btn-danger" onclick="arrayVisualizer.delete()">Delete</button>
+                                <button class="btn btn-sm btn-info" onclick="arrayVisualizer.search()">Search</button>
+                                <button class="btn btn-sm btn-warning" onclick="arrayVisualizer.bubbleSort()">Sort</button>
+                                <button class="btn btn-sm btn-success" onclick="arrayVisualizer.binarySearch()">Binary Search</button>
+                                <button class="btn btn-sm btn-secondary" onclick="arrayVisualizer.reset()">Reset</button>
+                            </div>
+                            <div class="mt-3">
+                                <h6>Time Complexity:</h6>
+                                <table class="table table-sm">
+                                    <tr><td>Access</td><td colspan="2">O(1)</td></tr>
+                                    <tr><td>Search</td><td>O(n) - Linear</td><td>O(log n) - Binary</td></tr>
+                                    <tr><td>Insert/Delete</td><td>O(n) - Middle</td><td>O(1) - End</td></tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- String -->
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header">
+                            <h5><i class="fas fa-font me-2"></i>String</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">A sequence of characters, typically used to represent text data.</p>
+                            <div class="canvas-container">
+                                <canvas id="stringCanvas" width="400" height="200"></canvas>
+                            </div>
+                            <div class="controls mt-3">
+                                <button class="btn btn-sm btn-primary" onclick="stringVisualizer.insert()">Insert</button>
+                                <button class="btn btn-sm btn-danger" onclick="stringVisualizer.delete()">Delete</button>
+                                <button class="btn btn-sm btn-info" onclick="stringVisualizer.reverse()">Reverse</button>
+                                <button class="btn btn-sm btn-warning" onclick="stringVisualizer.substring()">Substring</button>
+                                <button class="btn btn-sm btn-secondary" onclick="stringVisualizer.reset()">Reset</button>
+                            </div>
+                            <div class="mt-3">
+                                <h6>Time Complexity:</h6>
+                                <table class="table table-sm">
+                                    <tr><td>Access</td><td colspan="2">O(1)</td></tr>
+                                    <tr><td>Substring</td><td colspan="2">O(n)</td></tr>
+                                    <tr><td>Pattern Search</td><td colspan="2">O(n*m)</td></tr>
+                                    <tr><td>Reverse</td><td colspan="2">O(n)</td></tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Linear Structures Section -->
+        <section id="linear" class="mb-5">
+            <h2 class="section-title">Linear Data Structures</h2>
+            <div class="row">
+                <!-- Linked List -->
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header">
+                            <h5><i class="fas fa-link me-2"></i>Linked List</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">A linear data structure where elements are stored in nodes, and each node points to the next node in the sequence.</p>
+                            <div class="canvas-container">
+                                <canvas id="linkedListCanvas" width="400" height="200"></canvas>
+                            </div>
+                            <div class="controls mt-3">
+                                <button class="btn btn-sm btn-primary" onclick="linkedList.insert()">Insert</button>
+                                <button class="btn btn-sm btn-danger" onclick="linkedList.delete()">Delete</button>
+                                <button class="btn btn-sm btn-info" onclick="linkedList.traverse()">Traverse</button>
+                                <button class="btn btn-sm btn-secondary" onclick="linkedList.reset()">Reset</button>
+                            </div>
+                            <div class="mt-3">
+                                <h6>Time Complexity:</h6>
+                                <table class="table table-sm">
+                                    <tr><td>Insertion</td><td>O(1) - Beginning</td><td>O(n) - End</td></tr>
+                                    <tr><td>Deletion</td><td>O(1) - Beginning</td><td>O(n) - End</td></tr>
+                                    <tr><td>Search</td><td colspan="2">O(n)</td></tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stack -->
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header">
+                            <h5><i class="fas fa-layer-group me-2"></i>Stack</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">A LIFO (Last In, First Out) data structure where elements are added and removed from the top.</p>
+                            <div class="canvas-container">
+                                <canvas id="stackCanvas" width="400" height="200"></canvas>
+                            </div>
+                            <div class="controls mt-3">
+                                <button class="btn btn-sm btn-primary" onclick="stack.push()">Push</button>
+                                <button class="btn btn-sm btn-danger" onclick="stack.pop()">Pop</button>
+                                <button class="btn btn-sm btn-warning" onclick="stack.peek()">Peek</button>
+                                <button class="btn btn-sm btn-secondary" onclick="stack.reset()">Reset</button>
+                            </div>
+                            <div class="mt-3">
+                                <h6>Time Complexity:</h6>
+                                <table class="table table-sm">
+                                    <tr><td>Push</td><td colspan="2">O(1)</td></tr>
+                                    <tr><td>Pop</td><td colspan="2">O(1)</td></tr>
+                                    <tr><td>Peek</td><td colspan="2">O(1)</td></tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Queue -->
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header">
+                            <h5><i class="fas fa-queue me-2"></i>Queue</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">A FIFO (First In, First Out) data structure where elements are added at the rear and removed from the front.</p>
+                            <div class="canvas-container">
+                                <canvas id="queueCanvas" width="400" height="200"></canvas>
+                            </div>
+                            <div class="controls mt-3">
+                                <button class="btn btn-sm btn-primary" onclick="queue.enqueue()">Enqueue</button>
+                                <button class="btn btn-sm btn-danger" onclick="queue.dequeue()">Dequeue</button>
+                                <button class="btn btn-sm btn-warning" onclick="queue.front()">Front</button>
+                                <button class="btn btn-sm btn-secondary" onclick="queue.reset()">Reset</button>
+                            </div>
+                            <div class="mt-3">
+                                <h6>Time Complexity:</h6>
+                                <table class="table table-sm">
+                                    <tr><td>Enqueue</td><td colspan="2">O(1)</td></tr>
+                                    <tr><td>Dequeue</td><td colspan="2">O(1)</td></tr>
+                                    <tr><td>Front</td><td colspan="2">O(1)</td></tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tree-based Structures Section -->
+        <section id="tree" class="mb-5">
+            <h2 class="section-title">Tree-based Data Structures</h2>
+            <div class="row">
+                <!-- Binary Tree -->
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header">
+                            <h5><i class="fas fa-tree me-2"></i>Binary Tree</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">A hierarchical data structure where each node has at most two children, referred to as left and right child.</p>
+                            <div class="canvas-container">
+                                <canvas id="binaryTreeCanvas" width="400" height="300"></canvas>
+                            </div>
+                            <div class="controls mt-3">
+                                <button class="btn btn-sm btn-primary" onclick="binaryTree.insert()">Insert</button>
+                                <button class="btn btn-sm btn-danger" onclick="binaryTree.delete()">Delete</button>
+                                <button class="btn btn-sm btn-info" onclick="binaryTree.inorder()">Inorder</button>
+                                <button class="btn btn-sm btn-info" onclick="binaryTree.preorder()">Preorder</button>
+                                <button class="btn btn-sm btn-info" onclick="binaryTree.postorder()">Postorder</button>
+                                <button class="btn btn-sm btn-secondary" onclick="binaryTree.reset()">Reset</button>
+                            </div>
+                            <div class="mt-3">
+                                <h6>Time Complexity:</h6>
+                                <table class="table table-sm">
+                                    <tr><td>Insertion</td><td colspan="2">O(log n) - Balanced</td></tr>
+                                    <tr><td>Deletion</td><td colspan="2">O(log n) - Balanced</td></tr>
+                                    <tr><td>Search</td><td colspan="2">O(log n) - Balanced</td></tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Heap -->
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header">
+                            <h5><i class="fas fa-mountain me-2"></i>Heap</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">A specialized tree-based data structure that satisfies the heap property (max-heap or min-heap).</p>
+                            <div class="canvas-container">
+                                <canvas id="heapCanvas" width="400" height="300"></canvas>
+                            </div>
+                            <div class="controls mt-3">
+                                <button class="btn btn-sm btn-primary" onclick="heap.insert()">Insert</button>
+                                <button class="btn btn-sm btn-danger" onclick="heap.extractMax()">Extract Max</button>
+                                <button class="btn btn-sm btn-warning" onclick="heap.heapify()">Heapify</button>
+                                <button class="btn btn-sm btn-secondary" onclick="heap.reset()">Reset</button>
+                            </div>
+                            <div class="mt-3">
+                                <h6>Time Complexity:</h6>
+                                <table class="table table-sm">
+                                    <tr><td>Insertion</td><td colspan="2">O(log n)</td></tr>
+                                    <tr><td>Extract Max/Min</td><td colspan="2">O(log n)</td></tr>
+                                    <tr><td>Heapify</td><td colspan="2">O(n)</td></tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Graph Section -->
+        <section id="graph" class="mb-5">
+            <h2 class="section-title">Graph Data Structures</h2>
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5><i class="fas fa-project-diagram me-2"></i>Graph</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">A non-linear data structure consisting of vertices (nodes) and edges that connect these vertices.</p>
+                            <div class="canvas-container">
+                                <canvas id="graphCanvas" width="600" height="400"></canvas>
+                            </div>
+                            <div class="controls mt-3">
+                                <button class="btn btn-sm btn-primary" onclick="graph.addNode()">Add Node</button>
+                                <button class="btn btn-sm btn-info" onclick="graph.addEdge()">Add Edge</button>
+                                <button class="btn btn-sm btn-success" onclick="graph.dfs()">DFS</button>
+                                <button class="btn btn-sm btn-warning" onclick="graph.bfs()">BFS</button>
+                                <button class="btn btn-sm btn-secondary" onclick="graph.reset()">Reset</button>
+                            </div>
+                            <div class="mt-3">
+                                <h6>Time Complexity:</h6>
+                                <table class="table table-sm">
+                                    <tr><td>DFS/BFS</td><td colspan="2">O(V + E)</td></tr>
+                                    <tr><td>Add Node</td><td colspan="2">O(1)</td></tr>
+                                    <tr><td>Add Edge</td><td colspan="2">O(1)</td></tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hash Table Section -->
+        <section id="hash" class="mb-5">
+            <h2 class="section-title">Hash Tables</h2>
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5><i class="fas fa-hashtag me-2"></i>Hash Table</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">A data structure that implements an associative array abstract data type, mapping keys to values using a hash function.</p>
+                            <div class="canvas-container">
+                                <canvas id="hashTableCanvas" width="600" height="300"></canvas>
+                            </div>
+                            <div class="controls mt-3">
+                                <button class="btn btn-sm btn-primary" onclick="hashTable.insert()">Insert</button>
+                                <button class="btn btn-sm btn-danger" onclick="hashTable.delete()">Delete</button>
+                                <button class="btn btn-sm btn-info" onclick="hashTable.search()">Search</button>
+                                <button class="btn btn-sm btn-warning" onclick="hashTable.showCollision()">Show Collision</button>
+                                <button class="btn btn-sm btn-secondary" onclick="hashTable.reset()">Reset</button>
+                            </div>
+                            <div class="mt-3">
+                                <h6>Time Complexity:</h6>
+                                <table class="table table-sm">
+                                    <tr><td>Insertion</td><td colspan="2">O(1) - Average</td></tr>
+                                    <tr><td>Deletion</td><td colspan="2">O(1) - Average</td></tr>
+                                    <tr><td>Search</td><td colspan="2">O(1) - Average</td></tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trie Section -->
+        <section id="trie" class="mb-5">
+            <h2 class="section-title">Trie (Prefix Tree)</h2>
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5><i class="fas fa-sitemap me-2"></i>Trie</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">A tree-like data structure used to store a dynamic set of strings, where each node represents a character.</p>
+                            <div class="canvas-container">
+                                <canvas id="trieCanvas" width="600" height="400"></canvas>
+                            </div>
+                            <div class="controls mt-3">
+                                <button class="btn btn-sm btn-primary" onclick="trie.insert()">Insert Word</button>
+                                <button class="btn btn-sm btn-info" onclick="trie.search()">Search Word</button>
+                                <button class="btn btn-sm btn-warning" onclick="trie.prefix()">Prefix Search</button>
+                                <button class="btn btn-sm btn-secondary" onclick="trie.reset()">Reset</button>
+                            </div>
+                            <div class="mt-3">
+                                <h6>Time Complexity:</h6>
+                                <table class="table table-sm">
+                                    <tr><td>Insertion</td><td colspan="2">O(m) - m is word length</td></tr>
+                                    <tr><td>Search</td><td colspan="2">O(m) - m is word length</td></tr>
+                                    <tr><td>Prefix Search</td><td colspan="2">O(m) - m is prefix length</td></tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Quiz Section -->
+    <section id="quiz" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Test Your Knowledge</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <div id="quizContainer">
+                                <h5 id="questionText">What is the time complexity of inserting an element at the beginning of a linked list?</h5>
+                                <div class="quiz-options">
+                                    <button class="btn btn-outline-primary w-100 mb-2" onclick="checkAnswer(0)">O(n)</button>
+                                    <button class="btn btn-outline-primary w-100 mb-2" onclick="checkAnswer(1)">O(1)</button>
+                                    <button class="btn btn-outline-primary w-100 mb-2" onclick="checkAnswer(2)">O(log n)</button>
+                                    <button class="btn btn-outline-primary w-100 mb-2" onclick="checkAnswer(3)">O(n²)</button>
+                                </div>
+                                <div class="text-center mt-3">
+                                    <button class="btn btn-success" onclick="nextQuestion()">Next Question</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container text-center">
+            <p>&copy; 2024 AlgoVista - Data Structure Encyclopedia</p>
+            <div class="mt-3">
+                <a href="https://github.com/your-github-profile" class="btn btn-outline-light btn-sm mx-2" target="_blank"><i class="fab fa-github me-1"></i>GitHub</a>
+                <a href="mailto:your.email@example.com" class="btn btn-outline-light btn-sm mx-2"><i class="fas fa-envelope me-1"></i>Email</a>
+                <a href="https://www.linkedin.com/in/your-linkedin-profile" class="btn btn-outline-light btn-sm mx-2" target="_blank"><i class="fab fa-linkedin me-1"></i>LinkedIn</a>
+                <a href="#contact" class="btn btn-outline-light btn-sm mx-2"><i class="fas fa-user me-1"></i>Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/array.js"></script>
+    <script src="js/string.js"></script>
+    <script src="js/linkedList.js"></script>
+    <script src="js/stack.js"></script>
+    <script src="js/queue.js"></script>
+    <script src="js/binaryTree.js"></script>
+    <script src="js/heap.js"></script>
+    <script src="js/graph.js"></script>
+    <script src="js/hashTable.js"></script>
+    <script src="js/trie.js"></script>
+</body>
+</html> 

@@ -1,0 +1,600 @@
+/* Global Styles */
+:root {
+    --primary-color: #222;
+    --secondary-color: #F5F5F5;
+    --success-color: #222;
+    --danger-color: #222;
+    --warning-color: #222;
+    --info-color: #222;
+    --light-color: #F5F5F5;
+    --dark-color: #222;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: #7f7f7f;
+    color: #444;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(34,34,34,0.85), rgba(34,34,34,0.85)), url('images/back.jpg') center center/cover no-repeat;
+    color: #F5F5F5;
+    padding: 80px 0;
+}
+
+.hero-section h1 {
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    color: #F5F5F5;
+}
+
+.hero-subtitle {
+    color: white;
+    font-weight: 600;
+    text-shadow: 0 2px 16px #000, 0 0 4px #000, 0 0 0 #fff;
+    opacity: 1 !important;
+}
+
+.hero-title {
+    color: #949494 !important;
+}
+
+/* Section Titles */
+.section-title {
+    color: #222;
+    border-bottom: 3px solid #222;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* Cards */
+.card {
+    border: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #D3D3D3;
+    color: #222;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    background: #D3D3D3;
+    color: #222;
+    border: none;
+    padding: 15px 20px;
+}
+
+.card-header h5 {
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Canvas Container */
+.canvas-container {
+    background: #F5F5F5;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 15px 0;
+    border: 2px solid #E0E0E0;
+    position: relative;
+    overflow: hidden;
+}
+
+canvas {
+    border-radius: 8px;
+    background: #fff;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.controls .btn {
+    border-radius: 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    background: #222;
+    color: #F5F5F5;
+    border: 1px solid #222;
+}
+
+.controls .btn:hover {
+    transform: scale(1.05);
+    background: #555;
+    color: #F5F5F5;
+    border: 1px solid #555;
+}
+
+/* Tables */
+.table {
+    font-size: 0.9rem;
+    background: #F5F5F5;
+    color: #222;
+}
+
+.table td {
+    vertical-align: middle;
+    padding: 8px 12px;
+    border-color: #E0E0E0;
+}
+
+/* Search */
+#searchInput, #heroSearch {
+    border-radius: 25px;
+    border: 2px solid #E0E0E0;
+    transition: border-color 0.3s ease;
+    background: #F5F5F5;
+    color: #222;
+}
+
+#searchInput:focus, #heroSearch:focus {
+    border-color: #222;
+    box-shadow: 0 0 0 0.2rem rgba(34,34,34,0.08);
+}
+
+/* Quiz Section */
+.quiz-options .btn {
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    text-align: left;
+    padding: 15px 20px;
+    background: #F5F5F5;
+    color: #222;
+    border: 1px solid #E0E0E0;
+}
+
+.quiz-options .btn:hover {
+    transform: translateX(5px);
+    background: #222;
+    color: #F5F5F5;
+}
+
+.quiz-options .btn.correct {
+    background-color: #222;
+    color: #F5F5F5;
+    border-color: #222;
+}
+
+.quiz-options .btn.incorrect {
+    background-color: #222;
+    color: #F5F5F5;
+    border-color: #222;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes highlight {
+    0% {
+        background-color: var(--warning-color);
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.slide-in {
+    animation: slideIn 0.5s ease-out;
+}
+
+.pulse {
+    animation: pulse 1s ease-in-out;
+}
+
+.highlight {
+    animation: highlight 1s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 40px 0;
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .controls {
+        flex-direction: column;
+    }
+    
+    .controls .btn {
+        width: 100%;
+    }
+    
+    canvas {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .card-body {
+        padding: 15px;
+    }
+    
+    .table {
+        font-size: 0.8rem;
+    }
+    
+    .table td {
+        padding: 5px 8px;
+    }
+}
+
+/* Node Styles for Visualizations */
+.node {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.node:hover {
+    transform: scale(1.1);
+}
+
+.node.active {
+    animation: pulse 1s infinite;
+}
+
+.node.visited {
+    background-color: var(--info-color);
+}
+
+.node.path {
+    background-color: var(--success-color);
+}
+
+/* Edge Styles */
+.edge {
+    stroke: #666;
+    stroke-width: 2;
+    transition: all 0.3s ease;
+}
+
+.edge.active {
+    stroke: var(--primary-color);
+    stroke-width: 3;
+    animation: pulse 1s infinite;
+}
+
+/* Loading Animation */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Tooltip */
+.tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+/* Progress Bar */
+.progress {
+    height: 8px;
+    border-radius: 10px;
+    background-color: #e9ecef;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, var(--primary-color), var(--info-color));
+    transition: width 0.3s ease;
+}
+
+/* Code Snippet Styling */
+.code-snippet {
+    background: #F5F5F5;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    padding: 15px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    overflow-x: auto;
+    margin: 10px 0;
+    color: #222;
+}
+
+.code-snippet pre {
+    margin: 0;
+    color: #222;
+}
+
+/* Copy Button */
+.copy-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: #222;
+    color: #F5F5F5;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.copy-btn:hover {
+    background: #555;
+    color: #F5F5F5;
+}
+
+/* Success/Error Messages */
+.alert {
+    border-radius: 10px;
+    border: none;
+    padding: 15px 20px;
+    margin: 15px 0;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.alert-success {
+    background: linear-gradient(135deg, var(--success-color), #20c997);
+    color: white;
+}
+
+.alert-danger {
+    background: linear-gradient(135deg, var(--danger-color), #e74c3c);
+    color: white;
+}
+
+/* Navigation Enhancements */
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #222 !important;
+}
+
+/* Dropdown Enhancements */
+.dropdown-menu {
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background: #F5F5F5;
+    color: #222;
+}
+
+.dropdown-item {
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    color: #222;
+}
+
+.dropdown-item:hover {
+    background: #222;
+    color: #F5F5F5;
+    transform: translateX(5px);
+} 
+
+/* Step Cards for How It Works Section */
+.step-card {
+    background: #D3D3D3;
+    border: 2px solid #E0E0E0;
+    color: #222;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-color: #222;
+}
+
+.step-number {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    background: #222;
+    color: #F5F5F5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Featured Data Structures Cards */
+.featured-card {
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: #D3D3D3;
+    color: #222;
+}
+
+.featured-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    background: #E0E0E0;
+}
+
+.featured-card .card-body {
+    padding: 2rem 1.5rem;
+}
+
+.featured-card .btn {
+    background: #2a2a2a;
+    color: #F5F5F5;
+    border: 1px solid #2a2a2a;
+}
+.featured-card .btn:hover {
+    background: #444;
+    color: #F5F5F5;
+    border: 1px solid #444;
+}
+
+.featured-card i {
+    color: #2a2a2a !important;
+}
+
+.featured-card:hover i {
+    transform: scale(1.1);
+}
+
+/* Homepage specific styles */
+#homepage {
+    background: #7f7f7f;
+}
+
+#homepage .section-title {
+    color: #222;
+    border-bottom: 3px solid #222;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+#homepage .lead {
+    font-size: 1.2rem;
+    color: #444 !important;
+    line-height: 1.8;
+}
+
+/* Responsive adjustments for homepage */
+@media (max-width: 768px) {
+    .step-card {
+        margin-bottom: 2rem;
+    }
+    
+    .featured-card .card-body {
+        padding: 1.5rem 1rem;
+    }
+    
+    #homepage .lead {
+        font-size: 1.1rem;
+    }
+} 
+
+.bg-algovista {
+    background: #D3D3D3;
+} 
+
+.algovista-desc {
+    color: #444 !important;
+} 
+
+.how-it-works-section {
+    background: #7f7f7f;
+    border-radius: 20px;
+    padding: 40px 0;
+} 
+
+.explore-btn {
+    background: #2a2a2a !important;
+    color: #F5F5F5 !important;
+    border: 1px solid #2a2a2a !important;
+}
+.explore-btn:hover {
+    background: #444 !important;
+    color: #F5F5F5 !important;
+    border: 1px solid #444 !important;
+}
+
+.explore-icon {
+    color: #2a2a2a !important;
+} 
+
+.howitworks-icon {
+    color: #2a2a2a !important;
+} 
+
+.search-btn {
+    background: #2a2a2a !important;
+    color: #fff !important;
+    border: 1px solid #2a2a2a !important;
+}
+.search-btn:hover {
+    background: #444 !important;
+    color: #fff !important;
+    border: 1px solid #444 !important;
+}
+.search-btn i {
+    color: #fff !important;
+} 
+
+.quiz-card, .quiz-container, .quiz-box {
+    background: #7f7f7f !important;
+} 
+
+.navbar-dark.bg-primary {
+    background: #222 !important;
+} 
