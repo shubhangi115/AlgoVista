@@ -37,26 +37,6 @@ A comprehensive, interactive web application for learning and visualizing data s
 2. Open `index.html` in your web browser
 3. Start exploring the data structures!
 
-### File Structure
-```
-resume_project/
-├── index.html          # Main HTML file
-├── styles.css          # CSS styling and animations
-├── js/                 # JavaScript folder
-│   ├── script.js       # Main JavaScript functionality
-│   ├── array.js        # Array visualization
-│   ├── string.js       # String visualization
-│   ├── linkedList.js   # Linked List visualization
-│   ├── stack.js        # Stack visualization
-│   ├── queue.js        # Queue visualization
-│   ├── binaryTree.js   # Binary Tree visualization
-│   ├── heap.js         # Heap visualization
-│   ├── graph.js        # Graph visualization
-│   ├── hashTable.js    # Hash Table visualization
-│   └── trie.js         # Trie visualization
-└── README.md           # Project documentation
-```
-
 ## 📚 Data Structures Covered
 
 ### Linear Structures
@@ -135,16 +115,6 @@ resume_project/
 - **Real-time Feedback**: Immediate visual response to actions
 - **Educational Alerts**: Informative messages about operations
 - **Progress Tracking**: Quiz system with score tracking
-
-## 🔧 Technical Details
-
-### Technologies Used
-- **HTML5**: Semantic markup and structure
-- **CSS3**: Modern styling with animations and responsive design
-- **JavaScript (ES6+)**: Interactive functionality and algorithms
-- **Canvas API**: High-performance 2D graphics for visualizations
-- **Bootstrap 5**: Responsive UI framework
-- **Font Awesome**: Icon library for enhanced UI
 
 ### Browser Compatibility
 - Chrome 60+
