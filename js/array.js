@@ -11,17 +11,24 @@ class ArrayVisualizer {
         this.init();
     }
 
+    setInfoBox(message) {
+        const infoBox = document.getElementById('arrayInfoBox');
+        if (infoBox) infoBox.textContent = message;
+    }
+
     init() {
         this.reset();
         this.draw();
     }
 
     reset() {
+        this.setInfoBox('Reset: Clears the array and removes all elements.');
         this.elements = [];
         this.draw();
     }
 
     async insert() {
+        this.setInfoBox('Insert: Adds a new element to the end of the array.');
         if (this.elements.length >= this.maxElements) {
             showAlert('Array is full!', 'danger');
             return;
@@ -51,6 +58,7 @@ class ArrayVisualizer {
     }
 
     async delete() {
+        this.setInfoBox('Delete: Removes the last element from the array.');
         if (this.elements.length === 0) {
             showAlert('Array is empty!', 'danger');
             return;
@@ -79,6 +87,7 @@ class ArrayVisualizer {
     }
 
     async search() {
+        this.setInfoBox('Search: Finds an element in the array using linear search.');
         if (this.elements.length === 0) {
             showAlert('Array is empty!', 'danger');
             return;
@@ -128,6 +137,7 @@ class ArrayVisualizer {
     }
 
     async bubbleSort() {
+        this.setInfoBox('Sort: Sorts the array using the Bubble Sort algorithm.');
         if (this.elements.length < 2) {
             showAlert('Need at least 2 elements to sort!', 'warning');
             return;
@@ -189,6 +199,7 @@ class ArrayVisualizer {
     }
 
     async binarySearch() {
+        this.setInfoBox('Binary Search: Searches for an element in a sorted array using binary search.');
         if (this.elements.length === 0) {
             showAlert('Array is empty!', 'danger');
             return;

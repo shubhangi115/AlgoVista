@@ -15,13 +15,20 @@ class Graph {
         this.draw();
     }
 
+    setInfoBox(message) {
+        const infoBox = document.getElementById('graphInfoBox');
+        if (infoBox) infoBox.textContent = message;
+    }
+
     reset() {
+        this.setInfoBox('Reset: Clears the graph.');
         this.nodes = [];
         this.edges = [];
         this.draw();
     }
 
     addNode() {
+        this.setInfoBox('Add Node: Adds a new node (vertex) to the graph.');
         if (this.nodes.length >= 8) {
             showAlert('Maximum 8 nodes allowed!', 'danger');
             return;
@@ -49,6 +56,7 @@ class Graph {
     }
 
     addEdge() {
+        this.setInfoBox('Add Edge: Connects two nodes (vertices) in the graph.');
         if (this.nodes.length < 2) {
             showAlert('Need at least 2 nodes to create an edge!', 'danger');
             return;
@@ -89,6 +97,7 @@ class Graph {
     }
 
     async dfs() {
+        this.setInfoBox('DFS: Depth-First Search traverses the graph by exploring as far as possible along each branch.');
         if (this.nodes.length === 0) {
             showAlert('Graph is empty!', 'danger');
             return;
@@ -130,6 +139,7 @@ class Graph {
     }
 
     async bfs() {
+        this.setInfoBox('BFS: Breadth-First Search traverses the graph level by level.');
         if (this.nodes.length === 0) {
             showAlert('Graph is empty!', 'danger');
             return;

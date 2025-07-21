@@ -54,16 +54,10 @@ body {
 .card {
     border: none;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-radius: 15px;
     overflow: hidden;
     background: #D3D3D3;
     color: #222;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .card-header {
@@ -107,14 +101,12 @@ canvas {
 .controls .btn {
     border-radius: 20px;
     font-weight: 500;
-    transition: all 0.3s ease;
     background: #222;
     color: #F5F5F5;
     border: 1px solid #222;
 }
 
 .controls .btn:hover {
-    transform: scale(1.05);
     background: #555;
     color: #F5F5F5;
     border: 1px solid #555;
@@ -137,7 +129,6 @@ canvas {
 #searchInput, #heroSearch {
     border-radius: 25px;
     border: 2px solid #E0E0E0;
-    transition: border-color 0.3s ease;
     background: #F5F5F5;
     color: #222;
 }
@@ -150,7 +141,6 @@ canvas {
 /* Quiz Section */
 .quiz-options .btn {
     border-radius: 10px;
-    transition: all 0.3s ease;
     text-align: left;
     padding: 15px 20px;
     background: #F5F5F5;
@@ -159,7 +149,6 @@ canvas {
 }
 
 .quiz-options .btn:hover {
-    transform: translateX(5px);
     background: #222;
     color: #F5F5F5;
 }
@@ -176,83 +165,20 @@ canvas {
     border-color: #222;
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideIn {
-    from {
-        transform: translateX(-100%);
-    }
-    to {
-        transform: translateX(0);
-    }
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-@keyframes highlight {
-    0% {
-        background-color: var(--warning-color);
-    }
-    100% {
-        background-color: transparent;
-    }
-}
-
-/* Animation Classes */
-.fade-in {
-    animation: fadeIn 0.6s ease-out;
-}
-
-.slide-in {
-    animation: slideIn 0.5s ease-out;
-}
-
-.pulse {
-    animation: pulse 1s ease-in-out;
-}
-
-.highlight {
-    animation: highlight 1s ease-in-out;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero-section {
         padding: 40px 0;
     }
-    
     .hero-section h1 {
         font-size: 2rem;
     }
-    
     .controls {
         flex-direction: column;
     }
-    
     .controls .btn {
         width: 100%;
     }
-    
     canvas {
         max-width: 100%;
         height: auto;
@@ -263,11 +189,9 @@ canvas {
     .card-body {
         padding: 15px;
     }
-    
     .table {
         font-size: 0.8rem;
     }
-    
     .table td {
         padding: 5px 8px;
     }
@@ -276,15 +200,6 @@ canvas {
 /* Node Styles for Visualizations */
 .node {
     cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.node:hover {
-    transform: scale(1.1);
-}
-
-.node.active {
-    animation: pulse 1s infinite;
 }
 
 .node.visited {
@@ -299,28 +214,11 @@ canvas {
 .edge {
     stroke: #666;
     stroke-width: 2;
-    transition: all 0.3s ease;
 }
 
 .edge.active {
     stroke: var(--primary-color);
     stroke-width: 3;
-    animation: pulse 1s infinite;
-}
-
-/* Loading Animation */
-.loading {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    border: 3px solid rgba(255,255,255,.3);
-    border-radius: 50%;
-    border-top-color: #fff;
-    animation: spin 1s ease-in-out infinite;
-}
-
-@keyframes spin {
-    to { transform: rotate(360deg); }
 }
 
 /* Tooltip */
@@ -345,7 +243,6 @@ canvas {
 
 .progress-bar {
     background: linear-gradient(90deg, var(--primary-color), var(--info-color));
-    transition: width 0.3s ease;
 }
 
 /* Code Snippet Styling */
@@ -378,7 +275,6 @@ canvas {
     padding: 5px 10px;
     font-size: 12px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 .copy-btn:hover {
@@ -392,7 +288,6 @@ canvas {
     border: none;
     padding: 15px 20px;
     margin: 15px 0;
-    animation: fadeIn 0.5s ease-out;
 }
 
 .alert-success {
@@ -405,6 +300,12 @@ canvas {
     color: white;
 }
 
+.alert-info {
+    background-color: #d3d3d3 !important;
+    color: #222 !important;
+    border: none;
+}
+
 /* Navigation Enhancements */
 .navbar-brand {
     font-weight: 700;
@@ -413,7 +314,6 @@ canvas {
 
 .navbar-nav .nav-link {
     font-weight: 500;
-    transition: color 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover {
@@ -431,15 +331,13 @@ canvas {
 
 .dropdown-item {
     padding: 10px 20px;
-    transition: all 0.3s ease;
     color: #222;
 }
 
 .dropdown-item:hover {
     background: #222;
     color: #F5F5F5;
-    transform: translateX(5px);
-} 
+}
 
 /* Step Cards for How It Works Section */
 .step-card {
@@ -449,7 +347,6 @@ canvas {
 }
 
 .step-card:hover {
-    transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     border-color: #222;
 }
@@ -473,7 +370,6 @@ canvas {
 
 /* Featured Data Structures Cards */
 .featured-card {
-    transition: all 0.3s ease;
     border: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background: #D3D3D3;
@@ -481,7 +377,6 @@ canvas {
 }
 
 .featured-card:hover {
-    transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     background: #E0E0E0;
 }
@@ -506,7 +401,7 @@ canvas {
 }
 
 .featured-card:hover i {
-    transform: scale(1.1);
+    /* No transform */
 }
 
 /* Homepage specific styles */
@@ -534,11 +429,9 @@ canvas {
     .step-card {
         margin-bottom: 2rem;
     }
-    
     .featured-card .card-body {
         padding: 1.5rem 1rem;
     }
-    
     #homepage .lead {
         font-size: 1.1rem;
     }

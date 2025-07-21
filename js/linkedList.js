@@ -17,13 +17,20 @@ class LinkedList {
         this.draw();
     }
 
+    setInfoBox(message) {
+        const infoBox = document.getElementById('linkedListInfoBox');
+        if (infoBox) infoBox.textContent = message;
+    }
+
     reset() {
+        this.setInfoBox('Reset: Clears the linked list.');
         this.nodes = [];
         this.head = null;
         this.draw();
     }
 
     async insert() {
+        this.setInfoBox('Insert: Adds a new node at the beginning of the linked list.');
         if (this.nodes.length >= this.maxNodes) {
             showAlert('Linked List is full!', 'danger');
             return;
@@ -61,6 +68,7 @@ class LinkedList {
     }
 
     async delete() {
+        this.setInfoBox('Delete: Removes the node at the beginning of the linked list.');
         if (!this.head) {
             showAlert('List is empty!', 'danger');
             return;
@@ -87,6 +95,7 @@ class LinkedList {
     }
 
     async traverse() {
+        this.setInfoBox('Traverse: Visits each node in the linked list from head to tail.');
         if (!this.head) {
             showAlert('List is empty!', 'danger');
             return;

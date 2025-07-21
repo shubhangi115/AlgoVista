@@ -16,12 +16,19 @@ class Queue {
         this.draw();
     }
 
+    setInfoBox(message) {
+        const infoBox = document.getElementById('queueInfoBox');
+        if (infoBox) infoBox.textContent = message;
+    }
+
     reset() {
+        this.setInfoBox('Reset: Clears the queue.');
         this.items = [];
         this.draw();
     }
 
     async enqueue() {
+        this.setInfoBox('Enqueue: Adds a new element to the rear of the queue.');
         if (this.items.length >= this.maxItems) {
             showAlert('Queue is full!', 'danger');
             return;
@@ -77,6 +84,7 @@ class Queue {
     }
 
     async dequeue() {
+        this.setInfoBox('Dequeue: Removes the front element from the queue.');
         if (this.items.length === 0) {
             showAlert('Queue is empty!', 'danger');
             return;
@@ -145,6 +153,7 @@ class Queue {
     }
 
     async front() {
+        this.setInfoBox('Front: Views the front element of the queue without removing it.');
         if (this.items.length === 0) {
             showAlert('Queue is empty!', 'danger');
             return;

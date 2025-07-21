@@ -19,9 +19,16 @@ class BinaryTree {
     reset() {
         this.root = null;
         this.draw();
+        this.setInfoBox('Reset: Clears the binary tree.');
+    }
+
+    setInfoBox(message) {
+        const infoBox = document.getElementById('binaryTreeInfoBox');
+        if (infoBox) infoBox.textContent = message;
     }
 
     async insert() {
+        this.setInfoBox('Insert: Adds a new node to the binary tree.');
         const value = getRandomInt(1, 99);
         const newNode = { value, left: null, right: null };
         
@@ -69,6 +76,7 @@ class BinaryTree {
     }
 
     async delete() {
+        this.setInfoBox('Delete: Removes a node from the binary tree.');
         if (!this.root) {
             showAlert('Tree is empty!', 'danger');
             return;
@@ -120,6 +128,7 @@ class BinaryTree {
     }
 
     async inorder() {
+        this.setInfoBox('Inorder: Traverses the tree in left-root-right order.');
         if (!this.root) {
             showAlert('Tree is empty!', 'danger');
             return;
@@ -150,6 +159,7 @@ class BinaryTree {
     }
 
     async preorder() {
+        this.setInfoBox('Preorder: Traverses the tree in root-left-right order.');
         if (!this.root) {
             showAlert('Tree is empty!', 'danger');
             return;
@@ -179,6 +189,7 @@ class BinaryTree {
     }
 
     async postorder() {
+        this.setInfoBox('Postorder: Traverses the tree in left-right-root order.');
         if (!this.root) {
             showAlert('Tree is empty!', 'danger');
             return;

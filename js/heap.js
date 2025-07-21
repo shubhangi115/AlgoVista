@@ -17,12 +17,19 @@ class Heap {
         this.draw();
     }
 
+    setInfoBox(message) {
+        const infoBox = document.getElementById('heapInfoBox');
+        if (infoBox) infoBox.textContent = message;
+    }
+
     reset() {
+        this.setInfoBox('Reset: Clears the heap.');
         this.items = [];
         this.draw();
     }
 
     async insert() {
+        this.setInfoBox('Insert: Adds a new element to the heap and maintains the heap property.');
         if (this.items.length >= this.maxItems) {
             showAlert('Heap is full!', 'danger');
             return;
@@ -50,6 +57,7 @@ class Heap {
     }
 
     async extractMax() {
+        this.setInfoBox('Extract Max: Removes and returns the maximum element from the heap.');
         if (this.items.length === 0) {
             showAlert('Heap is empty!', 'danger');
             return;
@@ -81,6 +89,7 @@ class Heap {
     }
 
     async heapify() {
+        this.setInfoBox('Heapify: Rearranges the heap to maintain the heap property.');
         if (this.items.length === 0) {
             showAlert('Heap is empty!', 'danger');
             return;

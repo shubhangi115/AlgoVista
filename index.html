@@ -215,16 +215,15 @@
                         </div>
                         <div class="card-body">
                             <p class="card-text">A collection of elements stored at contiguous memory locations, accessible by index.</p>
-                            <div class="canvas-container">
-                                <canvas id="arrayCanvas" width="400" height="200"></canvas>
-                            </div>
-                            <div class="controls mt-3">
-                                <button class="btn btn-sm btn-primary" onclick="arrayVisualizer.insert()">Insert</button>
-                                <button class="btn btn-sm btn-danger" onclick="arrayVisualizer.delete()">Delete</button>
-                                <button class="btn btn-sm btn-info" onclick="arrayVisualizer.search()">Search</button>
-                                <button class="btn btn-sm btn-warning" onclick="arrayVisualizer.bubbleSort()">Sort</button>
-                                <button class="btn btn-sm btn-success" onclick="arrayVisualizer.binarySearch()">Binary Search</button>
-                                <button class="btn btn-sm btn-secondary" onclick="arrayVisualizer.reset()">Reset</button>
+                            <div id="arrayInfoBox" class="alert alert-info mt-3" role="alert">
+                                <ul class="mb-0">
+                                    <li><b>Insert:</b> Adds a new element to the end of the array.</li>
+                                    <li><b>Delete:</b> Removes the last element from the array.</li>
+                                    <li><b>Search:</b> Finds an element in the array using linear search.</li>
+                                    <li><b>Sort:</b> Sorts the array using the Bubble Sort algorithm.</li>
+                                    <li><b>Binary Search:</b> Searches for an element in a sorted array using binary search.</li>
+                                    <li><b>Reset:</b> Clears the array and removes all elements.</li>
+                                </ul>
                             </div>
                             <div class="mt-3">
                                 <h6>Time Complexity:</h6>
@@ -246,15 +245,13 @@
                         </div>
                         <div class="card-body">
                             <p class="card-text">A sequence of characters, typically used to represent text data.</p>
-                            <div class="canvas-container">
-                                <canvas id="stringCanvas" width="400" height="200"></canvas>
-                            </div>
-                            <div class="controls mt-3">
-                                <button class="btn btn-sm btn-primary" onclick="stringVisualizer.insert()">Insert</button>
-                                <button class="btn btn-sm btn-danger" onclick="stringVisualizer.delete()">Delete</button>
-                                <button class="btn btn-sm btn-info" onclick="stringVisualizer.reverse()">Reverse</button>
-                                <button class="btn btn-sm btn-warning" onclick="stringVisualizer.substring()">Substring</button>
-                                <button class="btn btn-sm btn-secondary" onclick="stringVisualizer.reset()">Reset</button>
+                            <div id="stringInfoBox" class="alert alert-info mt-3" role="alert">
+                                <ul class="mb-0">
+                                    <li><b>Access:</b> Accesses a character at a specific index.</li>
+                                    <li><b>Substring:</b> Extracts a substring from the string.</li>
+                                    <li><b>Pattern Search:</b> Searches for a pattern in the string using a pattern matching algorithm.</li>
+                                    <li><b>Reverse:</b> Reverses the string.</li>
+                                </ul>
                             </div>
                             <div class="mt-3">
                                 <h6>Time Complexity:</h6>
@@ -283,14 +280,12 @@
                         </div>
                         <div class="card-body">
                             <p class="card-text">A linear data structure where elements are stored in nodes, and each node points to the next node in the sequence.</p>
-                            <div class="canvas-container">
-                                <canvas id="linkedListCanvas" width="400" height="200"></canvas>
-                            </div>
-                            <div class="controls mt-3">
-                                <button class="btn btn-sm btn-primary" onclick="linkedList.insert()">Insert</button>
-                                <button class="btn btn-sm btn-danger" onclick="linkedList.delete()">Delete</button>
-                                <button class="btn btn-sm btn-info" onclick="linkedList.traverse()">Traverse</button>
-                                <button class="btn btn-sm btn-secondary" onclick="linkedList.reset()">Reset</button>
+                            <div id="linkedListInfoBox" class="alert alert-info mt-3" role="alert">
+                                <ul class="mb-0">
+                                    <li><b>Insert:</b> Adds a new node to the beginning or end of the list.</li>
+                                    <li><b>Delete:</b> Removes a node from the beginning or end of the list.</li>
+                                    <li><b>Traverse:</b> Iterates through the list to access elements.</li>
+                                </ul>
                             </div>
                             <div class="mt-3">
                                 <h6>Time Complexity:</h6>
@@ -312,14 +307,12 @@
                         </div>
                         <div class="card-body">
                             <p class="card-text">A LIFO (Last In, First Out) data structure where elements are added and removed from the top.</p>
-                            <div class="canvas-container">
-                                <canvas id="stackCanvas" width="400" height="200"></canvas>
-                            </div>
-                            <div class="controls mt-3">
-                                <button class="btn btn-sm btn-primary" onclick="stack.push()">Push</button>
-                                <button class="btn btn-sm btn-danger" onclick="stack.pop()">Pop</button>
-                                <button class="btn btn-sm btn-warning" onclick="stack.peek()">Peek</button>
-                                <button class="btn btn-sm btn-secondary" onclick="stack.reset()">Reset</button>
+                            <div id="stackInfoBox" class="alert alert-info mt-3" role="alert">
+                                <ul class="mb-0">
+                                    <li><b>Push:</b> Adds an element to the top of the stack.</li>
+                                    <li><b>Pop:</b> Removes the element from the top of the stack.</li>
+                                    <li><b>Peek:</b> Views the element at the top of the stack without removing it.</li>
+                                </ul>
                             </div>
                             <div class="mt-3">
                                 <h6>Time Complexity:</h6>
@@ -341,14 +334,12 @@
                         </div>
                         <div class="card-body">
                             <p class="card-text">A FIFO (First In, First Out) data structure where elements are added at the rear and removed from the front.</p>
-                            <div class="canvas-container">
-                                <canvas id="queueCanvas" width="400" height="200"></canvas>
-                            </div>
-                            <div class="controls mt-3">
-                                <button class="btn btn-sm btn-primary" onclick="queue.enqueue()">Enqueue</button>
-                                <button class="btn btn-sm btn-danger" onclick="queue.dequeue()">Dequeue</button>
-                                <button class="btn btn-sm btn-warning" onclick="queue.front()">Front</button>
-                                <button class="btn btn-sm btn-secondary" onclick="queue.reset()">Reset</button>
+                            <div id="queueInfoBox" class="alert alert-info mt-3" role="alert">
+                                <ul class="mb-0">
+                                    <li><b>Enqueue:</b> Adds an element to the rear of the queue.</li>
+                                    <li><b>Dequeue:</b> Removes an element from the front of the queue.</li>
+                                    <li><b>Front:</b> Views the element at the front of the queue without removing it.</li>
+                                </ul>
                             </div>
                             <div class="mt-3">
                                 <h6>Time Complexity:</h6>
@@ -376,16 +367,12 @@
                         </div>
                         <div class="card-body">
                             <p class="card-text">A hierarchical data structure where each node has at most two children, referred to as left and right child.</p>
-                            <div class="canvas-container">
-                                <canvas id="binaryTreeCanvas" width="400" height="300"></canvas>
-                            </div>
-                            <div class="controls mt-3">
-                                <button class="btn btn-sm btn-primary" onclick="binaryTree.insert()">Insert</button>
-                                <button class="btn btn-sm btn-danger" onclick="binaryTree.delete()">Delete</button>
-                                <button class="btn btn-sm btn-info" onclick="binaryTree.inorder()">Inorder</button>
-                                <button class="btn btn-sm btn-info" onclick="binaryTree.preorder()">Preorder</button>
-                                <button class="btn btn-sm btn-info" onclick="binaryTree.postorder()">Postorder</button>
-                                <button class="btn btn-sm btn-secondary" onclick="binaryTree.reset()">Reset</button>
+                            <div id="binaryTreeInfoBox" class="alert alert-info mt-3" role="alert">
+                                <ul class="mb-0">
+                                    <li><b>Insertion:</b> Adds a new node to the tree, maintaining the binary tree property.</li>
+                                    <li><b>Deletion:</b> Removes a node from the tree, maintaining the binary tree property.</li>
+                                    <li><b>Search:</b> Finds a node in the tree using a search algorithm.</li>
+                                </ul>
                             </div>
                             <div class="mt-3">
                                 <h6>Time Complexity:</h6>
@@ -407,14 +394,12 @@
                         </div>
                         <div class="card-body">
                             <p class="card-text">A specialized tree-based data structure that satisfies the heap property (max-heap or min-heap).</p>
-                            <div class="canvas-container">
-                                <canvas id="heapCanvas" width="400" height="300"></canvas>
-                            </div>
-                            <div class="controls mt-3">
-                                <button class="btn btn-sm btn-primary" onclick="heap.insert()">Insert</button>
-                                <button class="btn btn-sm btn-danger" onclick="heap.extractMax()">Extract Max</button>
-                                <button class="btn btn-sm btn-warning" onclick="heap.heapify()">Heapify</button>
-                                <button class="btn btn-sm btn-secondary" onclick="heap.reset()">Reset</button>
+                            <div id="heapInfoBox" class="alert alert-info mt-3" role="alert">
+                                <ul class="mb-0">
+                                    <li><b>Insertion:</b> Adds a new element to the heap, maintaining the heap property.</li>
+                                    <li><b>Extract Max/Min:</b> Removes the maximum or minimum element from the heap.</li>
+                                    <li><b>Heapify:</b> Rebuilds the heap from an array.</li>
+                                </ul>
                             </div>
                             <div class="mt-3">
                                 <h6>Time Complexity:</h6>
@@ -441,15 +426,13 @@
                         </div>
                         <div class="card-body">
                             <p class="card-text">A non-linear data structure consisting of vertices (nodes) and edges that connect these vertices.</p>
-                            <div class="canvas-container">
-                                <canvas id="graphCanvas" width="600" height="400"></canvas>
-                            </div>
-                            <div class="controls mt-3">
-                                <button class="btn btn-sm btn-primary" onclick="graph.addNode()">Add Node</button>
-                                <button class="btn btn-sm btn-info" onclick="graph.addEdge()">Add Edge</button>
-                                <button class="btn btn-sm btn-success" onclick="graph.dfs()">DFS</button>
-                                <button class="btn btn-sm btn-warning" onclick="graph.bfs()">BFS</button>
-                                <button class="btn btn-sm btn-secondary" onclick="graph.reset()">Reset</button>
+                            <div id="graphInfoBox" class="alert alert-info mt-3" role="alert">
+                                <ul class="mb-0">
+                                    <li><b>Add Node:</b> Adds a new vertex to the graph.</li>
+                                    <li><b>Add Edge:</b> Adds a new edge between two vertices.</li>
+                                    <li><b>DFS:</b> Performs Depth-First Search on the graph.</li>
+                                    <li><b>BFS:</b> Performs Breadth-First Search on the graph.</li>
+                                </ul>
                             </div>
                             <div class="mt-3">
                                 <h6>Time Complexity:</h6>
@@ -476,15 +459,13 @@
                         </div>
                         <div class="card-body">
                             <p class="card-text">A data structure that implements an associative array abstract data type, mapping keys to values using a hash function.</p>
-                            <div class="canvas-container">
-                                <canvas id="hashTableCanvas" width="600" height="300"></canvas>
-                            </div>
-                            <div class="controls mt-3">
-                                <button class="btn btn-sm btn-primary" onclick="hashTable.insert()">Insert</button>
-                                <button class="btn btn-sm btn-danger" onclick="hashTable.delete()">Delete</button>
-                                <button class="btn btn-sm btn-info" onclick="hashTable.search()">Search</button>
-                                <button class="btn btn-sm btn-warning" onclick="hashTable.showCollision()">Show Collision</button>
-                                <button class="btn btn-sm btn-secondary" onclick="hashTable.reset()">Reset</button>
+                            <div id="hashTableInfoBox" class="alert alert-info mt-3" role="alert">
+                                <ul class="mb-0">
+                                    <li><b>Insertion:</b> Inserts a key-value pair into the hash table.</li>
+                                    <li><b>Deletion:</b> Deletes a key-value pair from the hash table.</li>
+                                    <li><b>Search:</b> Searches for a key in the hash table.</li>
+                                    <li><b>Show Collision:</b> Demonstrates how collisions are handled in the hash table.</li>
+                                </ul>
                             </div>
                             <div class="mt-3">
                                 <h6>Time Complexity:</h6>
@@ -511,14 +492,12 @@
                         </div>
                         <div class="card-body">
                             <p class="card-text">A tree-like data structure used to store a dynamic set of strings, where each node represents a character.</p>
-                            <div class="canvas-container">
-                                <canvas id="trieCanvas" width="600" height="400"></canvas>
-                            </div>
-                            <div class="controls mt-3">
-                                <button class="btn btn-sm btn-primary" onclick="trie.insert()">Insert Word</button>
-                                <button class="btn btn-sm btn-info" onclick="trie.search()">Search Word</button>
-                                <button class="btn btn-sm btn-warning" onclick="trie.prefix()">Prefix Search</button>
-                                <button class="btn btn-sm btn-secondary" onclick="trie.reset()">Reset</button>
+                            <div id="trieInfoBox" class="alert alert-info mt-3" role="alert">
+                                <ul class="mb-0">
+                                    <li><b>Insert:</b> Inserts a new word into the trie.</li>
+                                    <li><b>Search:</b> Searches for a word in the trie.</li>
+                                    <li><b>Prefix Search:</b> Searches for all words that start with a given prefix.</li>
+                                </ul>
                             </div>
                             <div class="mt-3">
                                 <h6>Time Complexity:</h6>
@@ -567,9 +546,9 @@
         <div class="container text-center">
             <p>&copy; 2024 AlgoVista - Data Structure Encyclopedia</p>
             <div class="mt-3">
-                <a href="https://github.com/your-github-profile" class="btn btn-outline-light btn-sm mx-2" target="_blank"><i class="fab fa-github me-1"></i>GitHub</a>
-                <a href="mailto:your.email@example.com" class="btn btn-outline-light btn-sm mx-2"><i class="fas fa-envelope me-1"></i>Email</a>
-                <a href="https://www.linkedin.com/in/your-linkedin-profile" class="btn btn-outline-light btn-sm mx-2" target="_blank"><i class="fab fa-linkedin me-1"></i>LinkedIn</a>
+                <a href="https://github.com/shubhangi115" class="btn btn-outline-light btn-sm mx-2" target="_blank"><i class="fab fa-github me-1"></i>GitHub</a>
+                <a href="mailto:shubhangi0149@gmail.com" class="btn btn-outline-light btn-sm mx-2"><i class="fas fa-envelope me-1"></i>Email</a>
+                <a href="https://www.linkedin.com/in/shubhangi-579930288/" class="btn btn-outline-light btn-sm mx-2" target="_blank"><i class="fab fa-linkedin me-1"></i>LinkedIn</a>
                 <a href="#contact" class="btn btn-outline-light btn-sm mx-2"><i class="fas fa-user me-1"></i>Contact</a>
             </div>
         </div>

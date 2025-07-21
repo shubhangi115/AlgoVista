@@ -13,7 +13,13 @@ class HashTable {
         this.draw();
     }
 
+    setInfoBox(message) {
+        const infoBox = document.getElementById('hashTableInfoBox');
+        if (infoBox) infoBox.textContent = message;
+    }
+
     reset() {
+        this.setInfoBox('Reset: Clears the hash table.');
         this.table = new Array(10).fill(null).map(() => []);
         this.draw();
     }
@@ -23,6 +29,7 @@ class HashTable {
     }
 
     async insert() {
+        this.setInfoBox('Insert: Adds a key-value pair to the hash table.');
         const key = getRandomInt(1, 99);
         const value = getRandomInt(100, 999);
         const index = this.hash(key);
@@ -56,6 +63,7 @@ class HashTable {
     }
 
     async delete() {
+        this.setInfoBox('Delete: Removes a key-value pair from the hash table.');
         if (this.isEmpty()) {
             showAlert('Hash table is empty!', 'danger');
             return;
@@ -92,6 +100,7 @@ class HashTable {
     }
 
     async search() {
+        this.setInfoBox('Search: Finds a value by its key in the hash table.');
         if (this.isEmpty()) {
             showAlert('Hash table is empty!', 'danger');
             return;
@@ -139,6 +148,7 @@ class HashTable {
     }
 
     async showCollision() {
+        this.setInfoBox('Show Collision: Demonstrates how the hash table handles key collisions.');
         // Insert multiple items with same hash to demonstrate collision
         const key1 = 5;
         const key2 = 15;

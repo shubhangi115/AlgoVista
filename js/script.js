@@ -35,10 +35,6 @@ const quizQuestions = [
 ];
 
 // Utility functions
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -61,9 +57,7 @@ function searchDataStructure() {
                 cards.forEach(card => {
                     const title = card.querySelector('.card-header h5').textContent.toLowerCase();
                     if (title.includes(searchTerm)) {
-                        element.scrollIntoView({ behavior: 'smooth' });
-                        card.classList.add('highlight');
-                        setTimeout(() => card.classList.remove('highlight'), 2000);
+                        element.scrollIntoView();
                         found = true;
                     }
                 });
@@ -83,10 +77,8 @@ function showAlert(message, type = 'info') {
         ${message}
         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
     `;
-    
     const container = document.querySelector('.container');
     container.insertBefore(alertDiv, container.firstChild);
-    
     setTimeout(() => {
         if (alertDiv.parentNode) {
             alertDiv.remove();
@@ -98,7 +90,6 @@ function showAlert(message, type = 'info') {
 function checkAnswer(selectedIndex) {
     const question = quizQuestions[currentQuestion];
     const buttons = document.querySelectorAll('.quiz-options .btn');
-    
     buttons.forEach((btn, index) => {
         btn.disabled = true;
         if (index === question.correct) {
@@ -107,7 +98,6 @@ function checkAnswer(selectedIndex) {
             btn.classList.add('incorrect');
         }
     });
-    
     if (selectedIndex === question.correct) {
         score++;
         showAlert('Correct! Well done!', 'success');
@@ -122,14 +112,12 @@ function nextQuestion() {
         showQuizResults();
         return;
     }
-    
     loadQuestion();
 }
 
 function loadQuestion() {
     const question = quizQuestions[currentQuestion];
     document.getElementById('questionText').textContent = question.question;
-    
     const buttons = document.querySelectorAll('.quiz-options .btn');
     buttons.forEach((btn, index) => {
         btn.textContent = question.options[index];
@@ -141,7 +129,6 @@ function loadQuestion() {
 function showQuizResults() {
     const percentage = (score / quizQuestions.length) * 100;
     const quizContainer = document.getElementById('quizContainer');
-    
     quizContainer.innerHTML = `
         <h5>Quiz Complete!</h5>
         <p>Your score: ${score}/${quizQuestions.length} (${percentage.toFixed(1)}%)</p>
@@ -162,39 +149,21 @@ function resetQuiz() {
 function scrollToSection(sectionId) {
     const element = document.getElementById(sectionId);
     if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-        // Add highlight effect
-        element.classList.add('highlight');
-        setTimeout(() => element.classList.remove('highlight'), 2000);
+        element.scrollIntoView();
     }
 }
 
-// Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize search for heroSearch only
     document.getElementById('heroSearch').addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
             searchDataStructure();
         }
     });
-    
-    // Load first quiz question
     loadQuestion();
-    
-    // Add fade-in animation to cards
-    const cards = document.querySelectorAll('.card');
-    cards.forEach((card, index) => {
-        card.style.animationDelay = `${index * 0.1}s`;
-        card.classList.add('fade-in');
-    });
-    
-    // Initialize all data structure visualizations
     initializeVisualizations();
 });
 
-// Initialize all visualizations
 function initializeVisualizations() {
-    // Initialize each data structure visualization
     if (typeof arrayVisualizer !== 'undefined') arrayVisualizer.init();
     if (typeof stringVisualizer !== 'undefined') stringVisualizer.init();
     if (typeof linkedList !== 'undefined') linkedList.init();
