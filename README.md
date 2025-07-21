@@ -1,10 +1,9 @@
 # AlgoVista - Data Structure Encyclopedia
 
-A comprehensive, interactive web application for learning and visualizing data structures with step-by-step educational content.
+A comprehensive, interactive web application for learning data structures with step-by-step educational content.
 
-## 🌟 Features
 
-### Interactive Visualizations
+### Data Structures Covered
 - **Linked List**: Traversal, insertion, and deletion operations
 - **Stack**: Push, pop, peek operations with LIFO visualization
 - **Queue**: Enqueue, dequeue, front operations with FIFO visualization
@@ -14,18 +13,7 @@ A comprehensive, interactive web application for learning and visualizing data s
 - **Hash Table**: Collision handling demonstration with chaining
 - **Trie**: Word insertion, search, and prefix matching
 
-### Educational Content
-- **Theoretical Explanations**: Clear definitions and use cases for each data structure
-- **Time Complexity Tables**: Detailed complexity analysis for all operations
-- **Real-world Analogies**: Practical examples to understand concepts
-- **Interactive Quizzes**: Test your knowledge with multiple-choice questions
-
-### Visual Features
-- **Modern UI**: Beautiful Bootstrap-based interface with gradients and shadows
-- **Color-coded Operations**: Different colors for different operation types
-- **Responsive Design**: Works on desktop, tablet, and mobile devices
-
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 - A modern web browser (Chrome, Firefox, Safari, Edge)
@@ -36,72 +24,14 @@ A comprehensive, interactive web application for learning and visualizing data s
 2. Open `index.html` in your web browser
 3. Start exploring the data structures!
 
-## 📚 Data Structures Covered
-
-### Linear Structures
-1. **Linked List**
-   - Operations: Insert, Delete, Traverse
-   - Time Complexity: O(1) insertion at beginning, O(n) search
-   - Use Cases: Dynamic memory allocation, undo functionality
-
-2. **Stack**
-   - Operations: Push, Pop, Peek
-   - Time Complexity: O(1) for all operations
-   - Use Cases: Function call stack, undo/redo, parentheses matching
-
-3. **Queue**
-   - Operations: Enqueue, Dequeue, Front
-   - Time Complexity: O(1) for all operations
-   - Use Cases: Task scheduling, breadth-first search, print spooling
-
-### Tree-based Structures
-4. **Binary Tree**
-   - Operations: Insert, Delete, Traversals
-   - Time Complexity: O(log n) for balanced trees
-   - Use Cases: File systems, expression trees, decision trees
-
-5. **Heap**
-   - Operations: Insert, Extract Max/Min, Heapify
-   - Time Complexity: O(log n) for insert/extract, O(n) for heapify
-   - Use Cases: Priority queues, heap sort, graph algorithms
-
-### Graph Structures
-6. **Graph**
-   - Operations: Add Node, Add Edge, DFS, BFS
-   - Time Complexity: O(V + E) for traversals
-   - Use Cases: Social networks, navigation systems, dependency graphs
-
-### Hash-based Structures
-7. **Hash Table**
-   - Operations: Insert, Delete, Search, Collision Handling
-   - Time Complexity: O(1) average case
-   - Use Cases: Databases, caches, symbol tables
-
-8. **Trie (Prefix Tree)**
-   - Operations: Insert Word, Search Word, Prefix Search
-   - Time Complexity: O(m) where m is word length
-   - Use Cases: Autocomplete, spell checkers, IP routing
-
-## 🎯 How to Use
+##  How to Use
 
 ### Navigation
 - Use the navigation bar to jump to different sections
 - Use the search bar to find specific data structures
 - Use the category dropdown to filter by structure type
 
-### Interactive Learning
-1. **Explore Visualizations**: Click operation buttons to see instant updates
-2. **Read Explanations**: Each structure includes theoretical background
-3. **Check Complexity**: Review time/space complexity tables
-4. **Take Quizzes**: Test your understanding with interactive quizzes
-
-### Visualization Controls
-- **Insert/Add**: Add new elements to the structure
-- **Delete/Remove**: Remove elements from the structure
-- **Traverse/Search**: See how algorithms explore the structure
-- **Reset**: Clear the structure and start over
-
-## 🎨 Design Features
+##  Design Features
 
 ### Visual Design
 - **Modern UI**: Clean, professional interface with Bootstrap 5
@@ -110,7 +40,6 @@ A comprehensive, interactive web application for learning and visualizing data s
 
 ### User Experience
 - **Intuitive Controls**: Easy-to-understand button layout
-- **Real-time Feedback**: Immediate visual response to actions (no animations)
 - **Educational Alerts**: Informative messages about operations
 - **Progress Tracking**: Quiz system with score tracking
 
@@ -125,13 +54,11 @@ A comprehensive, interactive web application for learning and visualizing data s
 - Minimal memory footprint
 - Fast loading times
 
-## 📖 Educational Value
+##  Educational Value
 
 ### Learning Objectives
 - Understand fundamental data structure concepts
-- Visualize how algorithms work step-by-step
 - Learn time and space complexity analysis
-- Practice with interactive examples
 - Test knowledge through quizzes
 
 ### Target Audience
@@ -141,28 +68,5 @@ A comprehensive, interactive web application for learning and visualizing data s
 - Educators and teachers
 - Anyone interested in data structures
 
-## 🤝 Contributing
 
-This project is open for educational purposes. Feel free to:
-- Report bugs or issues
-- Suggest new features
-- Add more data structures
-- Improve visualizations
-- Enhance educational content
-
-## 📄 License
-
-This project is created for educational purposes. Feel free to use and modify for learning.
-
-## 🙏 Acknowledgments
-
-- Bootstrap team for the excellent UI framework
-- Canvas API for powerful graphics capabilities
-- The computer science community for algorithm knowledge
-- All educators who make learning accessible and engaging
-
----
-
-**Happy Learning! 🚀**
-
-Explore the fascinating world of data structures with AlgoVista and master the fundamentals of computer science through interactive, instant visualizations. 
+**Happy Learning!**
